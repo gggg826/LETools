@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Scene Name="Assets/Test.unity">
+    <gameObject Name="Canvas">
+      <Transform>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Position>
+        <Rotation>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Rotation>
+        <Scale>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+    <gameObject Name="Main Camera">
+      <Transform>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>-10</Z>
+        </Position>
+        <Rotation>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Rotation>
+        <Scale>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+    <gameObject Name="Directional light">
+      <Transform>
+        <Position>
+          <X>174</X>
+          <Y>316</Y>
+          <Z>0</Z>
+        </Position>
+        <Rotation>
+          <X>50</X>
+          <Y>330</Y>
+          <Z>0</Z>
+        </Rotation>
+        <Scale>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+    <gameObject Name="Cube">
+      <Transform>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Position>
+        <Rotation>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Rotation>
+        <Scale>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+    <gameObject Name="EventSystem">
+      <Transform>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Position>
+        <Rotation>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Rotation>
+        <Scale>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+  </Scene>
+</root>
