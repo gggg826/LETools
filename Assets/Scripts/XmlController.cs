@@ -11,6 +11,6 @@ public class XmlController : MonoBehaviour
 {
 	void Start () 
     {
-        LET.LoadScenes("Scenes_Config.xml", "Test");
+        LET.LoadScenes("Scenes_Config_XML.xml", "Test.unity", "xml");
 	}
 }

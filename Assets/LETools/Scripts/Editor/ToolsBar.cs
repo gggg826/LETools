@@ -11,8 +11,8 @@ using UnityEditor;
 public class ToolsBar : EditorWindow
 {
 
-    [MenuItem("LET/LE Tools Bar")]
-    static void Init()
+    
+    static public void InitBar()
     {
         EditorWindow.GetWindow(typeof(ToolsBar));
     }
@@ -29,6 +29,7 @@ public class ToolsBar : EditorWindow
     {
         float logoW = Screen.width - 20;
         float logoH = (Screen.width - 20) / 448f * 170f;
+
         GUI.DrawTexture(new Rect(10, 20, logoW, logoH), logo);
         
         if (GUI.Button(new Rect(10, logoH + 25, 200, 20), "Create Prefabs By Select"))
@@ -41,11 +42,26 @@ public class ToolsBar : EditorWindow
             LETools.ExportScenesToXML();
         }
 
-        if (GUI.Button(new Rect(10, logoH + 75, 200, 20), "Close"))
+        if (GUI.Button(new Rect(10, logoH + 75, 200, 20), "Export Scenes To JSON"))
+        {
+            LETools.ExportScenesToJSON();
+        }
+
+        if (GUI.Button(new Rect(10, logoH + 100, 200, 20), "Export Scenes To BINARY"))
+        {
+            LETools.ExportScenesToBINARY();
+        }
+
+        if (GUI.Button(new Rect(10, logoH + 125, 200, 20), "Close"))
         {
             Close();
         }
     }
+
+    //Rect GetRectByIndex(int id)
+    //{
+    //    return new Rect(0, 0, 0, 0);
+    //}
 }
 
 

@@ -9,6 +9,8 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 using System.Xml;
+using System.Text;
+using LitJson;
 
 public class LETools
 {
@@ -59,9 +61,7 @@ public class LETools
 
     static public void ExportScenesToXML()
     {
-        string path = EditorUtility.SaveFilePanel("SaveXML", Application.dataPath, "Scenes_Config", "xml");
-
-        if (File.Exists(path)) File.Delete(path);
+        string path = EditorUtility.SaveFilePanel("SaveXML", Application.dataPath, "Scenes_Config_XML", "xml");
 
         XmlDocument xmlDoc = new XmlDocument();
         XmlDeclaration xmlDec = xmlDoc.CreateXmlDeclaration("1.0", "UTF-8", null);
@@ -72,7 +72,7 @@ public class LETools
             if (s.enabled)
             {
                 EditorApplication.OpenScene(s.path);
-                XmlElement scene = xmlDoc.CreateElement("Scene");
+                XmlElement scene = xmlDoc.CreateElement("Scenes");
                 scene.SetAttribute("Name", s.path);
                 foreach (GameObject go in GameObject.FindObjectsOfType(typeof(GameObject)))
                 {
@@ -128,5 +128,131 @@ public class LETools
         xmlDoc.AppendChild(root);
         xmlDoc.Save(path);
         AssetDatabase.Refresh();
+    }
+
+    static public void ExportScenesToJSON()
+    {
+        string path = EditorUtility.SaveFilePanel("SaveJason", Application.dataPath, "Scenes_Config_JSON", "txt");
+        FileInfo fileInfo = new FileInfo(path);
+        StreamWriter sw = fileInfo.CreateText();
+
+        StringBuilder sb = new StringBuilder();
+        JsonWriter writer = new JsonWriter(sb);
+        writer.WriteObjectStart();
+        writer.WritePropertyName("root");
+        writer.WriteArrayStart();
+
+        foreach (EditorBuildSettingsScene S in EditorBuildSettings.scenes)
+        {
+            if (S.enabled)
+            {
+                EditorApplication.OpenScene(S.path);
+                writer.WriteObjectStart();
+                writer.WritePropertyName("Scene");
+                writer.WriteArrayStart();
+                writer.WriteObjectStart();
+                writer.WritePropertyName("SceneName");
+                writer.Write(S.path);
+                writer.WritePropertyName("GameObjects");
+                writer.WriteArrayStart();
+
+                foreach (GameObject obj in Object.FindObjectsOfType(typeof(GameObject)))
+                {
+                    if (obj.transform.parent == null)
+                    {
+                        writer.WriteObjectStart();
+                        writer.WritePropertyName("GameObjectName");
+                        writer.Write(obj.name);
+
+                        writer.WritePropertyName("Position");
+                        writer.WriteArrayStart();
+                        writer.WriteObjectStart();
+                        writer.WritePropertyName("X");
+                        writer.Write(obj.transform.position.x.ToString("F5"));
+                        writer.WritePropertyName("Y");
+                        writer.Write(obj.transform.position.y.ToString("F5"));
+                        writer.WritePropertyName("Z");
+                        writer.Write(obj.transform.position.z.ToString("F5"));
+                        writer.WriteObjectEnd();
+                        writer.WriteArrayEnd();
+
+                        writer.WritePropertyName("Rotation");
+                        writer.WriteArrayStart();
+                        writer.WriteObjectStart();
+                        writer.WritePropertyName("X");
+                        writer.Write(obj.transform.rotation.eulerAngles.x.ToString("F5"));
+                        writer.WritePropertyName("Y");
+                        writer.Write(obj.transform.rotation.eulerAngles.y.ToString("F5"));
+                        writer.WritePropertyName("Z");
+                        writer.Write(obj.transform.rotation.eulerAngles.z.ToString("F5"));
+                        writer.WriteObjectEnd();
+                        writer.WriteArrayEnd();
+
+                        writer.WritePropertyName("Scale");
+                        writer.WriteArrayStart();
+                        writer.WriteObjectStart();
+                        writer.WritePropertyName("X");
+                        writer.Write(obj.transform.localScale.x.ToString("F5"));
+                        writer.WritePropertyName("Y");
+                        writer.Write(obj.transform.localScale.y.ToString("F5"));
+                        writer.WritePropertyName("Z");
+                        writer.Write(obj.transform.localScale.z.ToString("F5"));
+                        writer.WriteObjectEnd();
+                        writer.WriteArrayEnd();
+
+                        writer.WriteObjectEnd();
+                    }
+                }
+
+                writer.WriteArrayEnd();
+                writer.WriteObjectEnd();
+                writer.WriteArrayEnd();
+                writer.WriteObjectEnd();
+            }
+        }
+        writer.WriteArrayEnd();
+        writer.WriteObjectEnd();
+        sw.WriteLine(sb.ToString());
+        sw.Close();
+        sw.Dispose();
+        AssetDatabase.Refresh();
+    }
+
+    static public void ExportScenesToBINARY()
+    {
+        string path = EditorUtility.SaveFilePanel("SaveBINARY", Application.dataPath, "Scenes_Config_BINARY", "txt");
+
+        FileStream fs = new FileStream(path, FileMode.Create);
+        BinaryWriter bw = new BinaryWriter(fs);
+        foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
+        {
+            if (S.enabled)
+            {
+                EditorApplication.OpenScene(S.path);
+
+                foreach (GameObject obj in Object.FindObjectsOfType(typeof(GameObject)))
+                {
+                    if (obj.transform.parent != null)
+                        continue;
+
+                    bw.Write(S.path);
+                    bw.Write(obj.name);
+                    short posx = (short)(obj.transform.position.x * 100);
+                    bw.Write(posx);
+                    bw.Write((short)(obj.transform.position.y * 100f));
+                    bw.Write((short)(obj.transform.position.z * 100f));
+                    bw.Write((short)(obj.transform.rotation.eulerAngles.x * 100f));
+                    bw.Write((short)(obj.transform.rotation.eulerAngles.y * 100f));
+                    bw.Write((short)(obj.transform.rotation.eulerAngles.z * 100f));
+                    bw.Write((short)(obj.transform.localScale.x * 100f));
+                    bw.Write((short)(obj.transform.localScale.y * 100f));
+                    bw.Write((short)(obj.transform.localScale.z * 100f));
+                }
+            }
+        }
+
+        bw.Flush();
+        bw.Close();
+        fs.Close();
     }
 }

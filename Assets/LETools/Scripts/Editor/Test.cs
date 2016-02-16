@@ -11,11 +11,9 @@ using System.IO;
 
 public class Test : EditorWindow
 {
-    [MenuItem("LET/Test/SaveFile InProject")]
-    static void JustTest()
+    
+    static public void JustTest()
     {
         EditorUtility.SaveFilePanelInProject("","","","");
     }
-    
-    
 }

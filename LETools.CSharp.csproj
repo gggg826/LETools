@@ -57,12 +57,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -72,14 +66,21 @@
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
+    <Reference Include="LitJson">
+      <HintPath>Assets\LETools\Resources\LitJson.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\LETools\Scripts\APIData\CommonDATA.cs" />
     <Compile Include="Assets\LETools\Scripts\APIData\LET.cs" />
+    <Compile Include="Assets\Scripts\BinaryController.cs" />
+    <Compile Include="Assets\Scripts\JSONController.cs" />
     <Compile Include="Assets\Scripts\XmlController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\StreamingAssets\Scenes_Config.xml" />
+    <None Include="Assets\StreamingAssets\Scenes_Config_BINARY.txt" />
+    <None Include="Assets\StreamingAssets\Scenes_Config_JSON.txt" />
+    <None Include="Assets\StreamingAssets\Scenes_Config_XML.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
