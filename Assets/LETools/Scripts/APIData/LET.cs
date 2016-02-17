@@ -8,13 +8,12 @@
 using UnityEngine;
 using System.IO;
 using System.Xml;
-using System.Text;
 using LitJson;
 
 public class LET : MonoBehaviour
 {
     /// <summary>
-    /// 加载场景文件(xml,json)
+    /// 加载场景文件(xml,json,binary)
     /// </summary>
     static public void LoadScenes(string configPath, string sceneName, string style)
     {
@@ -176,29 +175,20 @@ public class LET : MonoBehaviour
         FileStream fs = new FileStream(path, FileMode.Open);
         BinaryReader br = new BinaryReader(fs);
         int index = 0;
-        //将二进制字节流全部读取在这个byte数组当中
-        //ReadBytes传递的参数是一个长度，也就是流的长度
         byte[] tempall = br.ReadBytes((int)fs.Length);
-
-        //开始解析这个字节数组
         while (true)
         {
-            //当超过流长度，跳出循环
             if (index >= tempall.Length)
             {
                 break;
             }
 
-            //得到第一个byte 也就是得到字符串的长度
-            int scenelength = tempall[index];
-            byte[] sceneName = new byte[scenelength];
+            int sceneLength = tempall[index];
+            byte[] sceneName = new byte[sceneLength];
             index += 1;
-            //根据长度拷贝出对应长度的字节数组
             System.Array.Copy(tempall, index, sceneName, 0, sceneName.Length);
-            //然后把字节数组对应转换成字符串
             string scenename = System.Text.Encoding.Default.GetString(sceneName);
-
-            //这里和上面原理一样就不赘述
+            
             int objectLength = tempall[index + sceneName.Length];
             byte[] objectName = new byte[objectLength];
 
@@ -206,15 +196,11 @@ public class LET : MonoBehaviour
             System.Array.Copy(tempall, index, objectName, 0, objectName.Length);
             string prefabName = System.Text.Encoding.Default.GetString(objectName);
 
-            //下面就是拿short 每一个short的长度是2字节。
-
             index += objectName.Length;
             byte[] posx = new byte[2];
             System.Array.Copy(tempall, index, posx, 0, posx.Length);
-            //取得对应的数值 然后 除以100 就是float拉。	
             float x = System.BitConverter.ToInt16(posx, 0) / 100.0f;
 
-            //下面都差不多
             index += posx.Length;
             byte[] posy = new byte[2];
             System.Array.Copy(tempall, index, posy, 0, posy.Length);
@@ -259,16 +245,13 @@ public class LET : MonoBehaviour
 
             if (scenename.Equals("Assets/" + _sceneName))
             {
-                //最后在这里把场景生成出来
                 string prefab = "Prefabs/" + prefabName;
-                
                 Vector3 pos = new Vector3(x, y, z);
                 Vector3 rot = new Vector3(rx, ry, rz);
                 Vector3 sca = new Vector3(sx, sy, sz);
                 GameObject ob = (GameObject)Instantiate(Resources.Load(prefab), pos, Quaternion.Euler(rot));
                 ob.transform.localScale = sca;
             }
-
         }
     }
 

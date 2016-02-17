@@ -48,15 +48,22 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\LETools\Scripts\CommonDATA.cs" />
-     <Compile Include="Assets\LETools\Scripts\LET.cs" />
+     <Compile Include="Assets\LETools\Scripts\APIData\CommonDATA.cs" />
+     <Compile Include="Assets\LETools\Scripts\APIData\LET.cs" />
+     <Compile Include="Assets\Scripts\BinaryController.cs" />
+     <Compile Include="Assets\Scripts\JSONController.cs" />
      <Compile Include="Assets\Scripts\XmlController.cs" />
-     <None Include="Assets\StreamingAssets\Scenes_Config.xml" />
+     <None Include="Assets\StreamingAssets\Scenes_Config_BINARY.txt" />
+     <None Include="Assets\StreamingAssets\Scenes_Config_XML.xml" />
+     <None Include="Assets\StreamingAssets\Scenes_Config_JSON.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="LitJson">
+ <HintPath>/Users/TheNO.5/UnityProject/LETools/Assets/LETools/Resources/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

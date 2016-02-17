@@ -254,5 +254,6 @@ public class LETools
         bw.Flush();
         bw.Close();
         fs.Close();
+        AssetDatabase.Refresh();
     }
 }
