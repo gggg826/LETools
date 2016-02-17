@@ -48,14 +48,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\LETools\Scripts\APIData\CommonDATA.cs" />
-     <Compile Include="Assets\LETools\Scripts\APIData\LET.cs" />
-     <Compile Include="Assets\Scripts\BinaryController.cs" />
-     <Compile Include="Assets\Scripts\JSONController.cs" />
-     <Compile Include="Assets\Scripts\XmlController.cs" />
+     <Compile Include="Assets\LETools\DEMO\Scripts\BinaryController.cs" />
+     <Compile Include="Assets\LETools\DEMO\Scripts\JSONController.cs" />
+     <Compile Include="Assets\LETools\DEMO\Scripts\XmlController.cs" />
+     <Compile Include="Assets\LETools\Plugins\Scripts\APIData\CommonDATA.cs" />
+     <Compile Include="Assets\LETools\Plugins\Scripts\APIData\LET.cs" />
      <None Include="Assets\StreamingAssets\Scenes_Config_BINARY.txt" />
      <None Include="Assets\StreamingAssets\Scenes_Config_XML.xml" />
-     <None Include="Assets\StreamingAssets\Scenes_Config_JSON.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -63,7 +62,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>/Users/TheNO.5/UnityProject/LETools/Assets/LETools/Resources/LitJson.dll</HintPath>
+ <HintPath>/Users/TheNO.5/UnityProject/LETools/Assets/LETools/Plugins/Resources/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

@@ -1,7 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LETools/Scripts/APIData/LET.cs">
     <Files>
+      <File FileName="../letools/Assets/LETools/Scripts/Editor/LETools.cs" Line="1" Column="1" />
       <File FileName="Assets/LETools/Scripts/APIData/LET.cs" Line="254" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>

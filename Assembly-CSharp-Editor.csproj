@@ -48,14 +48,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\LETools\Scripts\Editor\LETools.cs" />
-     <Compile Include="Assets\LETools\Scripts\Editor\MainMenu.cs" />
-     <Compile Include="Assets\LETools\Scripts\Editor\Test.cs" />
-     <Compile Include="Assets\LETools\Scripts\Editor\ToolsBar.cs" />
+     <Compile Include="Assets\LETools\Plugins\Scripts\Editor\LETools.cs" />
+     <Compile Include="Assets\LETools\Plugins\Scripts\Editor\MainMenu.cs" />
+     <Compile Include="Assets\LETools\Plugins\Scripts\Editor\Test.cs" />
+     <Compile Include="Assets\LETools\Plugins\Scripts\Editor\ToolsBar.cs" />
      <Compile Include="Assets\VSCode\Plugins\Editor\VSCode.cs" />
      <None Include="Assets\StreamingAssets\Scenes_Config_BINARY.txt" />
      <None Include="Assets\StreamingAssets\Scenes_Config_XML.xml" />
-     <None Include="Assets\StreamingAssets\Scenes_Config_JSON.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -72,7 +71,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>/Users/TheNO.5/UnityProject/LETools/Assets/LETools/Resources/LitJson.dll</HintPath>
+ <HintPath>/Users/TheNO.5/UnityProject/LETools/Assets/LETools/Plugins/Resources/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>

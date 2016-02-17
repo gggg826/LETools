@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <Scene Name="Assets/Test.unity">
-    <gameObject Name="Canvas">
+  <Scenes Name="Assets/LETools/DEMO/Scenes/ActionCheck.unity">
+    <gameObject Name="unitychan_Action">
       <Transform>
         <Position>
           <X>0</X>
@@ -14,22 +14,22 @@
           <Z>0</Z>
         </Rotation>
         <Scale>
-          <X>0</X>
-          <Y>0</Y>
-          <Z>0</Z>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
         </Scale>
       </Transform>
     </gameObject>
     <gameObject Name="Main Camera">
       <Transform>
         <Position>
-          <X>0</X>
-          <Y>0</Y>
-          <Z>-10</Z>
+          <X>-3.760941E-08</X>
+          <Y>0.8</Y>
+          <Z>2.592596</Z>
         </Position>
         <Rotation>
           <X>0</X>
-          <Y>0</Y>
+          <Y>180</Y>
           <Z>0</Z>
         </Rotation>
         <Scale>
@@ -39,17 +39,17 @@
         </Scale>
       </Transform>
     </gameObject>
-    <gameObject Name="Directional light">
+    <gameObject Name="Directional Light">
       <Transform>
         <Position>
-          <X>174</X>
-          <Y>316</Y>
-          <Z>0</Z>
+          <X>-0.9961195</X>
+          <Y>2.05728</Y>
+          <Z>-0.185849</Z>
         </Position>
         <Rotation>
-          <X>50</X>
-          <Y>330</Y>
-          <Z>0</Z>
+          <X>38.25701</X>
+          <Y>163.3254</Y>
+          <Z>221.6762</Z>
         </Rotation>
         <Scale>
           <X>1</X>
@@ -58,26 +58,7 @@
         </Scale>
       </Transform>
     </gameObject>
-    <gameObject Name="Cube">
-      <Transform>
-        <Position>
-          <X>0</X>
-          <Y>0</Y>
-          <Z>0</Z>
-        </Position>
-        <Rotation>
-          <X>0</X>
-          <Y>0</Y>
-          <Z>0</Z>
-        </Rotation>
-        <Scale>
-          <X>1</X>
-          <Y>1</Y>
-          <Z>1</Z>
-        </Scale>
-      </Transform>
-    </gameObject>
-    <gameObject Name="EventSystem">
+    <gameObject Name="Plane">
       <Transform>
         <Position>
           <X>0</X>
@@ -96,5 +77,83 @@
         </Scale>
       </Transform>
     </gameObject>
-  </Scene>
+  </Scenes>
+  <Scenes Name="Assets/LETools/DEMO/Scenes/ARPoseTest.unity">
+    <gameObject Name="Directional Light">
+      <Transform>
+        <Position>
+          <X>-0.9961195</X>
+          <Y>2.05728</Y>
+          <Z>-0.185849</Z>
+        </Position>
+        <Rotation>
+          <X>38.25701</X>
+          <Y>163.3254</Y>
+          <Z>221.6762</Z>
+        </Rotation>
+        <Scale>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+    <gameObject Name="Main Camera">
+      <Transform>
+        <Position>
+          <X>-2.873998E-08</X>
+          <Y>1.307679</Y>
+          <Z>3.279303</Z>
+        </Position>
+        <Rotation>
+          <X>9.36832</X>
+          <Y>180</Y>
+          <Z>-6.474841E-07</Z>
+        </Rotation>
+        <Scale>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+    <gameObject Name="Plane">
+      <Transform>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Position>
+        <Rotation>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Rotation>
+        <Scale>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+    <gameObject Name="unitychan_Pose">
+      <Transform>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Position>
+        <Rotation>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Rotation>
+        <Scale>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+  </Scenes>
 </root>
