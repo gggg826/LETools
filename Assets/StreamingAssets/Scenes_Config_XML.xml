@@ -1,25 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <root>
   <Scenes Name="Assets/LETools/DEMO/Scenes/ActionCheck.unity">
-    <gameObject Name="unitychan_Action">
-      <Transform>
-        <Position>
-          <X>0</X>
-          <Y>0</Y>
-          <Z>0</Z>
-        </Position>
-        <Rotation>
-          <X>0</X>
-          <Y>0</Y>
-          <Z>0</Z>
-        </Rotation>
-        <Scale>
-          <X>1</X>
-          <Y>1</Y>
-          <Z>1</Z>
-        </Scale>
-      </Transform>
-    </gameObject>
     <gameObject Name="Main Camera">
       <Transform>
         <Position>
@@ -59,6 +40,25 @@
       </Transform>
     </gameObject>
     <gameObject Name="Plane">
+      <Transform>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Position>
+        <Rotation>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Rotation>
+        <Scale>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Scale>
+      </Transform>
+    </gameObject>
+    <gameObject Name="unitychan_Action">
       <Transform>
         <Position>
           <X>0</X>
@@ -117,7 +117,7 @@
         </Scale>
       </Transform>
     </gameObject>
-    <gameObject Name="Plane">
+    <gameObject Name="unitychan_ARPose">
       <Transform>
         <Position>
           <X>0</X>
@@ -136,7 +136,7 @@
         </Scale>
       </Transform>
     </gameObject>
-    <gameObject Name="unitychan_Pose">
+    <gameObject Name="Plane">
       <Transform>
         <Position>
           <X>0</X>

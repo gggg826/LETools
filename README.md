@@ -1,4 +1,4 @@
-#LAU EXPORT TOOLS
+﻿#**LAU EXPORT TOOLS**
 
 标签： Unity Editor  Tools
 
@@ -7,13 +7,15 @@
 
 **2016.02.04** 
 
-version:0.1.0   &#8195;&#8195;&#8195;  [DOWNLOAD]()
+version:0.1.0   &#8195;&#8195;&#8195;  [DOWNLOAD](http://download.csdn.net/detail/liushida00/9434772)
 
 
  - 批量创建Prefab
  - 将Scene导出为XML/JSON/BINARY配置文件
  - 加载配置文件，还原Scene
  
+ 
+#-----------------------------------------
 **Tutorial:**
 
 1.打开Tools面板
@@ -36,8 +38,20 @@ version:0.1.0   &#8195;&#8195;&#8195;  [DOWNLOAD]()
  
 ` LET.LoadScenes("Scenes_Config.xml", "Test.unity", "json");`
 
+
+#-----------------------------------------
 ###**Warning:** 
  - prefabs 保存路径选在任意Resources/Prefabs/文件夹下。
  
  - 配置文件保存在StreamingAssets/文件夹下。
  
+
+
+#-----------------------------------------
+
+![DEMO](http://img.blog.csdn.net/20160217212759951)
+
+![Settings](http://img.blog.csdn.net/20160217212842509)
+
+![Tools](http://img.blog.csdn.net/20160217214920126)
+
